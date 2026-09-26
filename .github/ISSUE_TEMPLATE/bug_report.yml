@@ -1,0 +1,44 @@
+name: Bug report
+description: Something in the engine, the CLI, the preview or a skill does not work as documented.
+labels: [bug]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time. The fastest reports to fix include the exact command, its full output, and a workspace we can run (a zip of `film.json` + `mg/`, or a minimal scene that shows the problem).
+  - type: textarea
+    id: what
+    attributes:
+      label: What happened
+      description: What you ran, what you expected, what you got. Paste the full output of the failing command.
+      render: text
+    validations:
+      required: true
+  - type: textarea
+    id: repro
+    attributes:
+      label: How to reproduce
+      description: Steps from `anim new`, or the smallest `film.json` + scene that shows it.
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: anim --version
+      placeholder: animspark 0.1.0 (node v22.x, darwin-arm64)
+    validations:
+      required: true
+  - type: input
+    id: ffmpeg
+    attributes:
+      label: ffmpeg -version (first line)
+  - type: dropdown
+    id: agent
+    attributes:
+      label: Driven by
+      options: [Claude Code, Codex, Cursor, Another agent, By hand]
+  - type: textarea
+    id: extra
+    attributes:
+      label: Anything else
+      description: Screenshots, contact sheets from `anim look`, the mp4 — whatever helps.

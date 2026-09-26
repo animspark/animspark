@@ -1,0 +1,12 @@
+{
+  "audience": "mg",
+  "namespace": "animspark",
+  "type": "foundation",
+  "category": "basics",
+  "title": "Motion Graphics",
+  "tagline": "Animated explainer scenes: titles, diagrams and visual ideas that move in sync with voice, sound and music.",
+  "animspark-id": "@animspark/awesome-mg, @animspark/three, @animspark/p5, @animspark/matter-js, @muspark/core, @animspark/html-in-canvas, web/html-in-canvas",
+  "hostPaths": {
+    "capabilities/html-in-canvas": "desktop"
+  }
+}

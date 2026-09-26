@@ -1,0 +1,12 @@
+{
+  "audience": "mg",
+  "namespace": "animspark",
+  "type": "component",
+  "requires": "@animspark/mg",
+  "category": "explainer",
+  "import": "@animspark/stem",
+  "title": "Code Explainer",
+  "tagline": "Code changing between versions and step-by-step execution state.",
+  "order": "3",
+  "films": "extension-code-binary-search"
+}

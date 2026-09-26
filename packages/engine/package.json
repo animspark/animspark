@@ -1,0 +1,92 @@
+{
+  "name": "animspark",
+  "version": "0.1.0",
+  "description": "anim — check, look at and render AnimSpark films on your own machine.",
+  "license": "Apache-2.0",
+  "type": "module",
+  "keywords": [
+    "video",
+    "motion-graphics",
+    "animation",
+    "react",
+    "gsap",
+    "cli",
+    "agent"
+  ],
+  "engines": {
+    "node": ">=22"
+  },
+  "bin": {
+    "anim": "./bin/anim.mjs"
+  },
+  "scripts": {
+    "test": "node --import tsx --test \"src/cloud/**/*.test.ts\" \"src/mcp/**/*.test.ts\""
+  },
+  "dependencies": {
+    "@animspark/core": "workspace:*",
+    "@animspark/film-build": "workspace:*",
+    "@animspark/p5": "workspace:*",
+    "@animspark/player": "workspace:*",
+    "@animspark/runtime": "workspace:*",
+    "@animspark/scene-engine": "workspace:*",
+    "@animspark/stem": "workspace:*",
+    "@animspark/three": "workspace:*",
+    "@gsap/react": "^2.1.2",
+    "@muspark/core": "workspace:*",
+    "@muspark/ui": "workspace:*",
+    "@resvg/resvg-js": "^2.6.2",
+    "d3-array": "^3.2.4",
+    "d3-contour": "^4.0.2",
+    "d3-delaunay": "^6.0.4",
+    "d3-force": "^3.0.0",
+    "d3-geo": "^3.1.1",
+    "d3-hierarchy": "^3.1.2",
+    "d3-interpolate": "^3.0.1",
+    "d3-random": "^3.0.1",
+    "d3-scale": "^4.0.2",
+    "d3-scale-chromatic": "^3.1.0",
+    "d3-shape": "^3.2.0",
+    "esbuild": "^0.25.0",
+    "esbuild-wasm": "0.25.12",
+    "gsap": "^3.15.0",
+    "highlight.js": "^11.11.1",
+    "html-to-image": "^1.11.13",
+    "jszip": "^3.10.1",
+    "matter-js": "^0.20.0",
+    "p5": "^1.11.13",
+    "playwright": "1.61.1",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "roughjs": "^4.6.6",
+    "sharp": "^0.35.3",
+    "simplex-noise": "^4.0.3",
+    "three": "^0.184.0",
+    "topojson-client": "^3.1.0",
+    "tsx": "^4.19.2",
+    "typescript": "^5.7.0",
+    "world-atlas": "^2.0.2",
+    "yaml": "^2.9.0",
+    "zod": "^4.4.3"
+  },
+  "files": [
+    "bin",
+    "src",
+    "prompts",
+    "tsconfig.json",
+    "!src/**/*.test.ts",
+    "!src/**/*.test.tsx"
+  ],
+  "devDependencies": {
+    "@types/react": "^19.2.18",
+    "@types/react-dom": "^19.2.4"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/animspark/animspark.git",
+    "directory": "packages/engine"
+  },
+  "homepage": "https://github.com/animspark/animspark/tree/main/packages/engine",
+  "bugs": {
+    "url": "https://github.com/animspark/animspark/issues"
+  }
+}

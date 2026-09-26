@@ -1,0 +1,12 @@
+{
+  "audience": "mg",
+  "namespace": "animspark",
+  "type": "component",
+  "requires": "@animspark/mg",
+  "category": "explainer",
+  "import": "@animspark/stem",
+  "title": "Scientific Plots",
+  "tagline": "Real matplotlib and NumPy figures for explainers where the numbers must be right.",
+  "order": "2",
+  "films": "neural-vision, photon-to-jpeg"
+}

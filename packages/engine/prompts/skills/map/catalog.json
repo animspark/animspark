@@ -1,0 +1,10 @@
+{
+  "audience": "mg",
+  "namespace": "animspark",
+  "type": "component",
+  "requires": "@animspark/mg",
+  "category": "business",
+  "title": "Maps",
+  "tagline": "World and country maps with real geography: projections, routes and a turning globe.",
+  "order": "4"
+}

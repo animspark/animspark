@@ -1,0 +1,37 @@
+{
+  "name": "@animspark/player",
+  "version": "0.1.0",
+  "description": "Play an AnimSpark film in the browser: the host iframe, the audio clock and a transport bar.",
+  "license": "Apache-2.0",
+  "type": "module",
+  "exports": {
+    ".": "./src/index.ts",
+    "./package.json": "./package.json"
+  },
+  "dependencies": {
+    "@animspark/core": "workspace:*"
+  },
+  "peerDependencies": {
+    "react": "^18.0.0 || ^19.0.0"
+  },
+  "files": [
+    "src",
+    "!src/**/*.test.ts",
+    "!src/**/*.test.tsx"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "devDependencies": {
+    "@types/react": "^19.2.18"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/animspark/animspark.git",
+    "directory": "packages/player"
+  },
+  "homepage": "https://github.com/animspark/animspark/tree/main/packages/player",
+  "bugs": {
+    "url": "https://github.com/animspark/animspark/issues"
+  }
+}

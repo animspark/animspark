@@ -1,0 +1,102 @@
+AnimSpark
+Copyright 2026 AnimSpark
+
+This product includes software developed by AnimSpark: the film format, the
+`anim` command-line engine, the film runtime, the muspark music engine and the
+scene packages in this repository. It is licensed under the Apache License,
+Version 2.0 (see LICENSE).
+
+
+Third-party
+===========
+
+The notices below cover material that this repository vendors or redistributes,
+and material the engine downloads at run time. Each item stays under its own
+license; nothing here is relicensed under Apache-2.0.
+
+
+1. Vendored fonts (redistributed)
+---------------------------------
+
+packages/engine/src/scene/vendor/fonts/files/ carries Latin subsets of four
+families, served locally so a film renders the same way offline:
+
+  Inter            (Inter-400, Inter-600)                 SIL Open Font License 1.1
+                   Copyright (c) 2016 The Inter Project Authors
+  Fraunces         (Fraunces-600, Fraunces-900)           SIL Open Font License 1.1
+                   Copyright 2018 The Fraunces Project Authors
+  Space Grotesk    (SpaceGrotesk-500, SpaceGrotesk-700)   SIL Open Font License 1.1
+                   Copyright 2020 The Space Grotesk Project Authors
+  JetBrains Mono   (JetBrainsMono-500, JetBrainsMono-700) SIL Open Font License 1.1
+                   Copyright 2020 The JetBrains Mono Project Authors
+
+The full license text for each family, with its copyright line, is in
+packages/engine/src/scene/vendor/font-licenses/ (inter.txt, fraunces.txt,
+space-grotesk.txt, jetbrains-mono.txt). The OFL is also available at
+https://openfontlicense.org/.
+
+The same directory holds the upstream license statements of the Chinese
+families listed below, because the npm packages that carry those fonts ship
+only the packager's MIT license, not the font's own terms.
+
+
+2. Fonts fetched at run time (not redistributed by this repository)
+-------------------------------------------------------------------
+
+When a film names a font family that is not vendored, the engine fetches it
+into the local cache (~/.cache/animspark or $ANIMSPARK_HOME) from the npm
+packages @fontsource/* and @chinese-fonts/* (from an installed copy, else from
+jsDelivr at the version pinned in packages/engine/src/scene/font-versions.json).
+Each font is under its own license, mostly SIL OFL 1.1, some Apache-2.0 or a
+free-for-commercial-use statement from the author; the engine's font library
+(packages/engine/src/scene/font-library.ts) records the license of every
+family. Check the license of any font you ship in a finished video.
+
+
+3. GeneralUser GS SoundFont (downloaded at run time)
+----------------------------------------------------
+
+@muspark/core renders sampled instruments with GeneralUser GS v2 by
+S. Christian Collins. It is not part of this repository; on first use it is
+downloaded from the author's GitHub repository at a pinned commit:
+
+  https://github.com/mrbumpy409/GeneralUser-GS
+  (commit 684543d5e5efaef08d02be50dcda8d552478fa60, see
+   packages/muspark/src/sampled/soundfont.ts)
+
+Its license (GeneralUser GS License v2.0) allows use without restriction for
+music creation, private or commercial, including profiting from recordings made
+with it, and allows use and modification in software projects. The author asks
+that websites not link directly to the download files; to use a mirror, set
+MUSPARK_SOUNDFONT_URL. Full text:
+https://github.com/mrbumpy409/GeneralUser-GS/blob/main/documentation/LICENSE.txt
+
+
+4. GSAP (npm dependency, NOT Apache-2.0)
+----------------------------------------
+
+Scenes animate with GSAP (packages `gsap` and `@gsap/react`), installed from
+npm as a dependency. GSAP is not open source under an OSI license and is not
+covered by this repository's Apache-2.0 license. It is distributed by
+GreenSock / Webflow under the GSAP Standard "No Charge" License:
+
+  https://gsap.com/standard-license
+
+That license allows free use on any website, web application or digital
+interface, including commercial use. Its "Prohibited Uses" clause excludes
+using GSAP in tools that let users build visual animations without code in a
+way that competes with Webflow's visual animation building capabilities. If
+you build a visual animation builder on top of AnimSpark, read the GSAP
+license terms (or ask Webflow) first. The engine keeps GSAP's license banner
+(/*! ... */) in every bundle it builds.
+
+
+5. Other npm dependencies
+-------------------------
+
+Everything else the engine uses (React, esbuild and esbuild-wasm, Playwright,
+three.js, p5.js (LGPL-2.1), matter-js, d3, sharp (whose prebuilt binaries
+include LGPL-3.0 libvips), resvg-js (MPL-2.0), MathJax, spessasynth_core, and
+others) is installed from npm under that package's own license and is not
+redistributed by this repository. Bundles built by the engine keep those
+packages' legal comments.

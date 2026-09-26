@@ -1,0 +1,6 @@
+{
+  "stage": { "w": 1920, "h": 1080 },
+  "tracks": [
+    { "kind": "mg", "clips": [{ "id": "chart", "src": "mg/chart", "at": 0 }] }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "audience": "mg",
+  "namespace": "animspark",
+  "type": "component",
+  "requires": "@animspark/mg",
+  "category": "explainer",
+  "import": "@animspark/stem",
+  "title": "Math Formulas",
+  "tagline": "Typeset LaTeX equations and animate derivations term by term.",
+  "order": "1",
+  "films": "extension-loss-descent"
+}

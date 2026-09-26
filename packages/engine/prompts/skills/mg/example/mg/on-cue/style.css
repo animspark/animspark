@@ -1,0 +1,76 @@
+.oc {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  isolation: isolate;
+  background: #0d0a10;
+  -webkit-font-smoothing: antialiased;
+  font-kerning: normal;
+}
+
+.oc *,
+.oc *::before,
+.oc *::after {
+  box-sizing: border-box;
+}
+
+/* Everything the lens sees lives in one 1920×1080 world; the lens moves the world. */
+.oc-world {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 1920px;
+  height: 1080px;
+  transform-origin: 0 0;
+}
+
+/* Canvases paint in frame space with the same lens, so they stay crisp when the lens pushes in. */
+.oc-canvas {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 1920px;
+  height: 1080px;
+  pointer-events: none;
+}
+
+.oc-glow {
+  mix-blend-mode: screen;
+}
+
+.oc-abs {
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.oc-label {
+  font-family: "Barlow Condensed", "Arial Narrow", sans-serif;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.oc-type {
+  font-family: "Special Elite", "Courier New", monospace;
+}
+
+.oc-hand {
+  font-family: "Kalam", cursive;
+}
+
+.oc-display {
+  font-family: "Playfair Display", serif;
+}
+
+.oc-marquee {
+  font-family: "Bungee", sans-serif;
+}
+
+/* Fonts load before the first frame is judged; hidden runs keep all five families warm. */
+.oc-fontwarm {
+  position: absolute;
+  left: -10000px;
+  top: 0;
+  opacity: 0;
+}

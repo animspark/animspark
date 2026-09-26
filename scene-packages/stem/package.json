@@ -1,0 +1,185 @@
+{
+  "name": "@animspark/stem",
+  "version": "0.1.0",
+  "description": "STEM visuals for films: typeset formulas, scientific plots, image analysis and code that morphs and traces.",
+  "license": "Apache-2.0",
+  "type": "module",
+  "main": "./src/index.ts",
+  "module": "./src/index.ts",
+  "types": "./src/index.ts",
+  "exports": {
+    ".": {
+      "types": "./src/index.ts",
+      "import": "./src/index.ts",
+      "default": "./src/index.ts"
+    },
+    "./film": {
+      "types": "./src/film.ts",
+      "import": "./src/film.ts",
+      "default": "./src/film.ts"
+    },
+    "./mpl-harness": {
+      "types": "./src/mpl-harness.ts",
+      "import": "./src/mpl-harness.ts",
+      "default": "./src/mpl-harness.ts"
+    },
+    "./bake": {
+      "types": "./src/bake.ts",
+      "import": "./src/bake.ts",
+      "default": "./src/bake.ts"
+    },
+    "./playback/formula": {
+      "types": "./src/playback-formula.ts",
+      "import": "./src/playback-formula.ts",
+      "default": "./src/playback-formula.ts"
+    },
+    "./playback/mpl": {
+      "types": "./src/playback-mpl.ts",
+      "import": "./src/playback-mpl.ts",
+      "default": "./src/playback-mpl.ts"
+    },
+    "./playback/imgproc": {
+      "types": "./src/playback-imgproc.ts",
+      "import": "./src/playback-imgproc.ts",
+      "default": "./src/playback-imgproc.ts"
+    },
+    "./playback/code-morph": {
+      "types": "./src/playback-code-morph.ts",
+      "import": "./src/playback-code-morph.ts",
+      "default": "./src/playback-code-morph.ts"
+    },
+    "./playback/execution-trace": {
+      "types": "./src/playback-execution-trace.ts",
+      "import": "./src/playback-execution-trace.ts",
+      "default": "./src/playback-execution-trace.ts"
+    },
+    "./package.json": "./package.json"
+  },
+  "scripts": {
+    "typecheck": "tsc --noEmit",
+    "test": "node --import tsx --test \"src/**/*.test.ts\""
+  },
+  "animspark": {
+    "scenePackage": true,
+    "developer": {
+      "id": "animspark",
+      "name": "AnimSpark"
+    },
+    "packageName": "animspark/stem",
+    "tagline": "Professional expression for Science, Technology, Engineering and Mathematics: formulas, scientific plots, image analysis and code-semantics animation.",
+    "keywords": [
+      "stem",
+      "science",
+      "technology",
+      "engineering",
+      "math",
+      "formula",
+      "latex",
+      "equation",
+      "derivation",
+      "python",
+      "pyodide",
+      "matplotlib",
+      "pyplot",
+      "numpy",
+      "scipy",
+      "sympy",
+      "pandas",
+      "networkx",
+      "matplotlib_venn",
+      "pillow",
+      "pil",
+      "imgproc",
+      "image-processing",
+      "statistics",
+      "data-science",
+      "plot",
+      "code",
+      "refactor",
+      "execution-trace"
+    ],
+    "components": [
+      "formula",
+      "mpl",
+      "codeMorph",
+      "executionTrace"
+    ],
+    "functions": [
+      "imgproc"
+    ],
+    "extensions": {
+      "formula": {
+        "title": "Formula",
+        "tagline": "LaTeX formulas, term-by-term morphs and multi-step derivations.",
+        "components": [
+          "formula"
+        ]
+      },
+      "plot": {
+        "title": "Scientific Plots",
+        "tagline": "Functions, statistics, signals, fields and complex data graphics.",
+        "components": [
+          "mpl"
+        ]
+      },
+      "image": {
+        "title": "Image Processing",
+        "tagline": "Pixel-level image analysis and chained processing.",
+        "functions": [
+          "imgproc"
+        ]
+      },
+      "code": {
+        "title": "Code",
+        "tagline": "Code structure changes, execution traces and runtime state.",
+        "components": [
+          "codeMorph",
+          "executionTrace"
+        ]
+      }
+    },
+    "playbackByCapability": {
+      "formula": "./playback/formula",
+      "mpl": "./playback/mpl",
+      "imgproc": "./playback/imgproc",
+      "codeMorph": "./playback/code-morph",
+      "executionTrace": "./playback/execution-trace"
+    },
+    "bake": "./bake"
+  },
+  "peerDependencies": {
+    "@animspark/scene-engine": "workspace:*",
+    "react": "^19.0.0"
+  },
+  "dependencies": {
+    "@animspark/core": "workspace:*",
+    "mathjax-full": "^3.2.2"
+  },
+  "devDependencies": {
+    "@animspark/scene-engine": "workspace:*",
+    "@types/node": "^22.0.0",
+    "tsx": "^4.19.0",
+    "typescript": "^5.7.0"
+  },
+  "files": [
+    "src",
+    "SKILL.md",
+    "APIs",
+    "catalog.json",
+    "cover.jpg",
+    "!src/**/*.test.ts",
+    "!src/**/*.test.tsx"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/animspark/animspark.git",
+    "directory": "scene-packages/stem"
+  },
+  "homepage": "https://github.com/animspark/animspark/tree/main/scene-packages/stem",
+  "bugs": {
+    "url": "https://github.com/animspark/animspark/issues"
+  }
+}
