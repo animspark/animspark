@@ -64,6 +64,6 @@ test('the key is only sent over https, or http to loopback', () => {
 });
 
 test('maskKey never shows the whole key', () => {
-  assert.equal(maskKey('sk_live_abcdefghijkl'), 'sk_liv…ijkl');
+  assert.equal(maskKey('key_example_abcdefghijkl'), 'key_ex…ijkl');
   assert.equal(maskKey('short'), '••••');
 });

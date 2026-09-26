@@ -2,22 +2,25 @@ name: Release
 
 # Push a tag like v0.1.0: tests and the smoke render run, every package is published to npm with
 # provenance, and a GitHub release is created with the changelog section for that version.
+#
+# Publishing uses npm trusted publishing (OIDC): npm trusts this workflow, in the `npm`
+# environment, for every package, so there is no npm token anywhere. See docs/releasing.md.
 on:
   push:
     tags: ['v*.*.*']
 
 permissions:
   contents: write   # create the GitHub release
-  id-token: write   # npm provenance
+  id-token: write   # npm trusted publishing and provenance
 
 jobs:
   release:
     runs-on: ubuntu-latest
     environment: npm
     steps:
-      - uses: actions/checkout@v7
-      - uses: pnpm/action-setup@v6
-      - uses: actions/setup-node@v7
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - uses: pnpm/action-setup@ea17c68df8912ef543352723c149a84f56e3d413 # v6.1.0
+      - uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
         with:
           node-version: 22
           cache: pnpm
@@ -34,10 +37,17 @@ jobs:
           pnpm --dir packages/engine exec playwright install --with-deps chromium
       - run: sh scripts/smoke.sh
       - name: Publish to npm
-        run: pnpm -r publish --access public --no-git-checks
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
-          NPM_CONFIG_PROVENANCE: 'true'
+        # pnpm packs (workspace:* becomes the real version); npm publishes, authenticating with the
+        # workflow's OIDC identity. A version that is already on the registry is skipped, so a
+        # re-run after a partial publish finishes the job.
+        run: |
+          npm install -g npm@^11.5.1
+          pnpm -r pack --pack-destination "$RUNNER_TEMP/pkgs"
+          for t in "$RUNNER_TEMP"/pkgs/*.tgz; do
+            id=$(tar -xOzf "$t" package/package.json | node -p "const p = JSON.parse(require('fs').readFileSync(0, 'utf8')); p.name + '@' + p.version")
+            if npm view "$id" version > /dev/null 2>&1; then echo "$id is already published"; continue; fi
+            npm publish "$t" --access public --provenance
+          done
       - name: GitHub release
         run: |
           awk -v v="${GITHUB_REF_NAME#v}" '$0 ~ "^## " v {p=1; next} /^## / && p {exit} p' CHANGELOG.md > notes.md

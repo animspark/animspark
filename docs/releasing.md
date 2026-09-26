@@ -55,12 +55,29 @@ does not conflict.
 2. `sh scripts/pack-smoke.sh` — packs every package (`pnpm -r pack` turns `workspace:*` into
    the real version), installs the tarballs with npm in an empty directory outside the
    repository, and runs the smoke test against that installed `anim`.
-3. Bump every package's `version` to the same number (and the `workspace:*` ranges stay as
-   they are — pnpm rewrites them on publish).
-4. `pnpm -r publish --access public` (from a clean tree, logged in to npm with rights on
-   the `animspark` package and the `@animspark` / `@muspark` scopes).
-5. Tag the commit `v<version>`.
+3. Bump every package's `version` to the same number (the `workspace:*` ranges stay as they
+   are — packing rewrites them) and add a `## <version>` section to `CHANGELOG.md`.
+4. Push a tag `v<version>` on that commit. `.github/workflows/release.yml` checks that the
+   version matches the tag, runs the tests and the smoke render again, waits for a maintainer
+   to approve the `npm` environment, publishes every package and creates the GitHub release
+   from the changelog section.
 
-Users also need `ffmpeg` on `PATH` and Chromium for Playwright
-(`npx playwright@1.61.1 install chromium`); playwright is pinned on purpose, so a release
-that changes it must say so in its notes.
+## How publishing is authenticated
+
+There is no npm token. Every package trusts one publisher on npmjs.com (package → Settings →
+Trusted publishing): GitHub Actions, repository `animspark/animspark`, workflow `release.yml`,
+environment `npm`. npm exchanges the workflow's OIDC identity for a short-lived publish
+credential and attaches a provenance statement, so each version on npm links back to the
+commit and the run that built it. Package publishing access is set to require 2FA and
+disallow tokens, so nothing else can publish.
+
+The `npm` environment only accepts `v*.*.*` tags and needs a maintainer's approval; tags
+matching `v*` cannot be moved or deleted (repository ruleset).
+
+A new package has to exist before a trusted publisher can be attached to it. Add it to this
+table, publish its first version by hand (`npm publish --access public` from its directory,
+logged in with 2FA), attach the trusted publisher, and set its publishing access as above.
+
+Users also need `ffmpeg` on `PATH`. The headless Chromium Playwright drives is downloaded on the
+first `anim check`, `look` or `render`. playwright is pinned on purpose (it decides which
+Chromium renders every frame), so a release that changes it must say so in its notes.
