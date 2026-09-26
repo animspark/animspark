@@ -1,0 +1,5 @@
+node_modules/
+.anim-out/
+.anim-look/
+.DS_Store
+*.log

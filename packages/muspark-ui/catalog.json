@@ -1,0 +1,11 @@
+{
+  "audience": "mg",
+  "namespace": "muspark",
+  "type": "component",
+  "category": "audio",
+  "title": "Sheet Music",
+  "tagline": "Staff notation and piano rolls drawn from the same playable score as the music.",
+  "order": "14",
+  "films": "sonata-form, prime-music, song-anatomy, extension-chord-anatomy, velvet-magpie",
+  "requires": "@animspark/mg"
+}

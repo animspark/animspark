@@ -1,0 +1,97 @@
+{
+  "name": "@animspark/three",
+  "version": "0.1.0",
+  "description": "Three real-time 3D package: three.js (WebGL) with a shared renderer, per-frame determinism, frame-accurate seeking and 4K export.",
+  "license": "Apache-2.0",
+  "type": "module",
+  "main": "./src/index.ts",
+  "module": "./src/index.ts",
+  "types": "./src/index.ts",
+  "exports": {
+    ".": {
+      "types": "./src/index.ts",
+      "import": "./src/index.ts",
+      "default": "./src/index.ts"
+    },
+    "./playback": {
+      "types": "./src/playback.ts",
+      "import": "./src/playback.ts",
+      "default": "./src/playback.ts"
+    },
+    "./package.json": "./package.json"
+  },
+  "scripts": {
+    "typecheck": "tsc --noEmit",
+    "test": "node --import tsx --test \"src/**/*.test.ts\""
+  },
+  "animspark": {
+    "scenePackage": true,
+    "developer": {
+      "id": "animspark",
+      "name": "AnimSpark"
+    },
+    "packageName": "animspark/three",
+    "tagline": "Real-time 3D (three.js/WebGL): write a standard setup()/update() scene in <Three />; the system handles the shared renderer, per-frame determinism and 4K export. All official addons are available.",
+    "keywords": [
+      "three",
+      "3d",
+      "webgl",
+      "shader",
+      "mesh",
+      "camera",
+      "particles",
+      "geometry",
+      "addons",
+      "composer"
+    ],
+    "components": [
+      "three"
+    ],
+    "extensions": {
+      "three": {
+        "title": "Three Real-time 3D",
+        "tagline": "WebGL scenes rendered straight to film: geometry, materials and lighting, particle fields and camera moves. Deterministic per frame, exportable at 4K.",
+        "components": [
+          "three"
+        ]
+      }
+    },
+    "playbackByCapability": {
+      "three": "./playback"
+    },
+    "vocabulary": [
+      "three"
+    ],
+    "engine": ">=0.0.1"
+  },
+  "dependencies": {
+    "three": "^0.184.0"
+  },
+  "peerDependencies": {
+    "@animspark/scene-engine": "workspace:*"
+  },
+  "devDependencies": {
+    "@animspark/scene-engine": "workspace:*",
+    "@types/node": "^22.0.0",
+    "@types/three": "^0.184.1",
+    "tsx": "^4.19.0",
+    "typescript": "^5.7.0"
+  },
+  "files": [
+    "src",
+    "!src/**/*.test.ts",
+    "!src/**/*.test.tsx"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/animspark/animspark.git",
+    "directory": "scene-packages/three"
+  },
+  "homepage": "https://github.com/animspark/animspark/tree/main/scene-packages/three",
+  "bugs": {
+    "url": "https://github.com/animspark/animspark/issues"
+  }
+}

@@ -1,0 +1,10 @@
+# Written by anim check / look / render — regenerated on every run.
+.anim/
+.anim-look/
+.anim-look-*.html
+.anim-out/
+**/assets/index.json
+**/assets/index.jsonl
+**/assets/audio/music/score-*.wav
+# Per-workspace engine state lives next to the workspace (../runtime).
+/runtime/

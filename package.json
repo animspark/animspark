@@ -1,0 +1,31 @@
+{
+  "name": "animspark-monorepo",
+  "private": true,
+  "description": "AnimSpark — the open-source video agent engine: a film format, a renderer, a music engine and the skills that teach coding agents to write films.",
+  "license": "Apache-2.0",
+  "type": "module",
+  "packageManager": "pnpm@10.18.3",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "anim": "node packages/engine/bin/anim.mjs",
+    "smoke": "sh scripts/smoke.sh",
+    "test": "pnpm -r --if-present test",
+    "examples": "sh scripts/check-examples.sh"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/animspark/animspark.git"
+  },
+  "homepage": "https://github.com/animspark/animspark#readme",
+  "bugs": {
+    "url": "https://github.com/animspark/animspark/issues"
+  },
+  "pnpm": {
+    "overrides": {
+      "undici@7": "^7.29.0",
+      "@xmldom/xmldom@0.9": "^0.9.12"
+    }
+  }
+}

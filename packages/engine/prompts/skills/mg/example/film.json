@@ -1,0 +1,68 @@
+{
+  "stage": {
+    "w": 1920,
+    "h": 1080
+  },
+  "tracks": [
+    {
+      "kind": "mg",
+      "clips": [
+        {
+          "id": "01-stage",
+          "src": "mg/on-cue/scenes/01-stage",
+          "at": 0.0
+        },
+        {
+          "id": "02-script",
+          "src": "mg/on-cue/scenes/02-script",
+          "at": 18.94
+        },
+        {
+          "id": "03-set",
+          "src": "mg/on-cue/scenes/03-set",
+          "at": 30.271
+        },
+        {
+          "id": "04-blocking",
+          "src": "mg/on-cue/scenes/04-blocking",
+          "at": 44.542
+        },
+        {
+          "id": "05-cue",
+          "src": "mg/on-cue/scenes/05-cue",
+          "at": 58.002
+        },
+        {
+          "id": "06-change",
+          "src": "mg/on-cue/scenes/06-change",
+          "at": 74.242
+        },
+        {
+          "id": "07-track",
+          "src": "mg/on-cue/scenes/07-track",
+          "at": 83.262
+        },
+        {
+          "id": "08-curtain",
+          "src": "mg/on-cue/scenes/08-curtain",
+          "at": 97.322
+        }
+      ]
+    },
+    {
+      "kind": "audio",
+      "clips": [
+        {
+          "id": "score",
+          "src": "mg/on-cue/music/score.ts",
+          "at": 0,
+          "volume": 0.85,
+          "time": [
+            0,
+            115.182
+          ]
+        }
+      ]
+    }
+  ]
+}

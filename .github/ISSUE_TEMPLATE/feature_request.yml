@@ -1,0 +1,19 @@
+name: Feature request
+description: A capability the engine, the CLI or a skill should have.
+labels: [enhancement]
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: The film you are trying to make
+      description: What you wanted on screen or in the workflow, and where the engine got in the way. A concrete film beats an abstract feature.
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: What would help
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: What you tried instead

@@ -1,0 +1,46 @@
+name: Release
+
+# Push a tag like v0.1.0: tests and the smoke render run, every package is published to npm with
+# provenance, and a GitHub release is created with the changelog section for that version.
+on:
+  push:
+    tags: ['v*.*.*']
+
+permissions:
+  contents: write   # create the GitHub release
+  id-token: write   # npm provenance
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    environment: npm
+    steps:
+      - uses: actions/checkout@v7
+      - uses: pnpm/action-setup@v6
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 22
+          cache: pnpm
+          registry-url: https://registry.npmjs.org
+      - run: pnpm install --frozen-lockfile
+      - name: Version matches the tag
+        run: |
+          v=$(node -p "require('./packages/engine/package.json').version")
+          test "v$v" = "$GITHUB_REF_NAME" || { echo "packages/engine is $v, tag is $GITHUB_REF_NAME"; exit 1; }
+      - run: pnpm -r --if-present test
+      - name: Install ffmpeg and Chromium
+        run: |
+          sudo apt-get update && sudo apt-get install -y --no-install-recommends ffmpeg
+          pnpm --dir packages/engine exec playwright install --with-deps chromium
+      - run: sh scripts/smoke.sh
+      - name: Publish to npm
+        run: pnpm -r publish --access public --no-git-checks
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+          NPM_CONFIG_PROVENANCE: 'true'
+      - name: GitHub release
+        run: |
+          awk -v v="${GITHUB_REF_NAME#v}" '$0 ~ "^## " v {p=1; next} /^## / && p {exit} p' CHANGELOG.md > notes.md
+          gh release create "$GITHUB_REF_NAME" --title "$GITHUB_REF_NAME" --notes-file notes.md --verify-tag
+        env:
+          GH_TOKEN: ${{ github.token }}

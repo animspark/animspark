@@ -1,0 +1,11 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Questions and show-and-tell
+    url: https://github.com/animspark/animspark/discussions
+    about: Ask how to do something, share a film you made, or discuss ideas.
+  - name: Report a security problem
+    url: https://github.com/animspark/animspark/security/advisories/new
+    about: Please report vulnerabilities privately, not in an issue.
+  - name: The AnimSpark app (timeline editor, AI director, cloud)
+    url: https://animspark.com
+    about: Questions about the hosted product and accounts go to animspark.com.
