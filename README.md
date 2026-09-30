@@ -1,5 +1,5 @@
 <p align="center">
-  <a href="https://animspark.com"><img src="docs/assets/hero.webp" alt="AnimSpark — the open-source video agent" width="100%"></a>
+  <a href="https://animspark.com"><img src="docs/assets/hero.webp" alt="AnimSpark — make any video, change anything" width="100%"></a>
 </p>
 
 <p align="center">
@@ -10,8 +10,9 @@
 </p>
 
 <p align="center">
-  <b>The open-source video agent.</b> A film format, a frame-exact renderer, a music engine and the<br>
-  skills that let Claude Code, Codex or Cursor make motion graphics, product videos and explainers — on your machine.
+  <b>Make any video. Change anything.</b> This is the open-source engine behind AnimSpark: a film format,<br>
+  a frame-exact renderer, a music engine and the skills that let Claude Code, Codex or Cursor make motion graphics,<br>
+  product videos and explainers — on your machine.
 </p>
 
 <p align="center">

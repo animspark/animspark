@@ -1,7 +1,7 @@
 {
   "name": "animspark-monorepo",
   "private": true,
-  "description": "AnimSpark — the open-source video agent engine: a film format, a renderer, a music engine and the skills that teach coding agents to write films.",
+  "description": "The open-source engine behind AnimSpark (make any video, change anything): a film format, a renderer, a music engine and the skills that teach coding agents to write films.",
   "license": "Apache-2.0",
   "type": "module",
   "packageManager": "pnpm@10.18.3",
