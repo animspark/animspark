@@ -1,7 +1,0 @@
-{
-  "stage": { "w": 1920, "h": 1080 },
-  "tracks": [
-    { "kind": "mg", "clips": [{ "id": "beat", "src": "mg/beat", "at": 0 }] },
-    { "kind": "audio", "clips": [{ "id": "groove", "src": "assets/audio/music/groove.ts", "at": 0, "time": [0, 8], "volume": 0.9 }] }
-  ]
-}

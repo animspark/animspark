@@ -23,7 +23,7 @@
   <a href="https://animspark.com">AnimSpark app</a>
 </p>
 
-<p align="center"><sub>The banner above is a film made with this engine — <a href="examples/brand-card">examples/brand-card</a>.</sub></p>
+<p align="center"><sub>The banner above is a film made with this engine. See <a href="examples">examples</a> for finished films you can open and play live.</sub></p>
 
 ---
 

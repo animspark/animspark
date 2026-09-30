@@ -1,0 +1,28 @@
+{
+  "stage": {
+    "w": 1920,
+    "h": 1080
+  },
+  "tracks": [
+    {
+      "kind": "mg",
+      "clips": [
+        {
+          "src": "mg/px-film.tsx",
+          "id": "film",
+          "at": 0
+        }
+      ]
+    },
+    {
+      "kind": "audio",
+      "clips": [
+        {
+          "src": "assets/audio/music/one-prompt.mp3",
+          "id": "song",
+          "at": 0
+        }
+      ]
+    }
+  ]
+}
