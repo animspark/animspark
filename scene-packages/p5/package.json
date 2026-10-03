@@ -71,7 +71,7 @@
   },
   "devDependencies": {
     "@animspark/scene-engine": "workspace:*",
-    "@types/node": "^22.0.0",
+    "@types/node": "^26.6.3",
     "@types/p5": "^1.7.7",
     "tsx": "^4.19.0",
     "typescript": "^5.7.0"
