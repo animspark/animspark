@@ -34,10 +34,10 @@
   },
   "devDependencies": {
     "@types/node": "^22.10.2",
-    "@types/react": "^19.0.0",
-    "react": "^19.0.0",
+    "@types/react": "^19.3.0",
+    "react": "^19.3.0",
     "typescript": "^5.7.2",
-    "tsx": "^4.19.0"
+    "tsx": "^4.23.15"
   },
   "files": [
     "src",

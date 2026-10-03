@@ -65,7 +65,7 @@
     "engine": ">=0.0.1"
   },
   "dependencies": {
-    "three": "^0.184.0"
+    "three": "^0.186.1"
   },
   "peerDependencies": {
     "@animspark/scene-engine": "workspace:*"
@@ -73,8 +73,8 @@
   "devDependencies": {
     "@animspark/scene-engine": "workspace:*",
     "@types/node": "^22.0.0",
-    "@types/three": "^0.184.1",
-    "tsx": "^4.19.0",
+    "@types/three": "^0.186.0",
+    "tsx": "^4.23.15",
     "typescript": "^5.7.0"
   },
   "files": [
